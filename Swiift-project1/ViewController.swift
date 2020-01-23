@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         self.magicNumber = generateRandomValue()
     }

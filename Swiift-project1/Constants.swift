@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum Constants{
     static let wrongTitle: String = "Wrong answer"
     static let successTitle: String = "Success"
