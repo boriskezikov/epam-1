@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         if validateInput(value: textField.text!) {
             let userValue: Int = Int(textField.text!) ?? -1
             if userValue == -1 {
-                toast(title: Constants.badRequestTitle, message: Constants.badRequestTitle)
+                toast(title: Constants.badRequestTitle, message: Constants.incorrectInputMessage)
                 return
             }
             if userValue > magicNumber {

@@ -16,6 +16,6 @@ enum Constants{
     static let lessMessage: String  = "Magic number is lower"
     static let successMessage: String  = "Yes! You are right! This is: "
     static let validationRegex: String = "^[0-9]*$"
-    static let incorrectInputMessage: String = "Incorrect input. Magic number consists of numbers!"
+    static let incorrectInputMessage: String = "Incorrect input. Try again!"
     static let badRequestTitle: String = "Bad Request"
 }
