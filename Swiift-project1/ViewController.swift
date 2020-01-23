@@ -26,11 +26,11 @@ class ViewController: UIViewController {
         let userValue: Int8 = Int8(textField.text!)! // validate how????
         
         if userValue > magicNumber{
-            showAlert(title: WRONG_TITLE, message: LESS_MESSAGE)
+            toast(title: WRONG_TITLE, message: LESS_MESSAGE)
         } else if userValue < magicNumber {
-            showAlert(title: WRONG_TITLE, message: BIGGER_MESSAGE)
+            toast(title: WRONG_TITLE, message: BIGGER_MESSAGE)
         } else {
-            showAlert(title: SUCCESS_TITLE, message: SUCCESS_MESSAGE + String(magicNumber))
+            toast(title: SUCCESS_TITLE, message: SUCCESS_MESSAGE + String(magicNumber))
             magicNumber = generateRandomValue()
         }
         textField.text = ""
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         self.magicNumber = generateRandomValue()
     }
     
-    private func showAlert(title: String, message: String) {
+    private func toast(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
     
     private func generateRandomValue()->Int8{
         let tmp = Int8.random(in: 0..<100 )
-        print("\nGuessed number is \(tmp)")
         return tmp
     }
 }
