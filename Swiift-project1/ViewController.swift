@@ -10,46 +10,54 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    
-    private let WRONG_TITLE: String = "Wrong answer"
-    private let SUCCESS_TITLE: String = "Success"
-    private let BIGGER_MESSAGE: String  = "Magic number is bigger"
-    private let LESS_MESSAGE: String  = "Magic number is lower"
-    private let SUCCESS_MESSAGE: String  = "Yes! You are right! This is: "
 
-    private var magicNumber: Int8 = 0
-    
+    private var magicNumber: Int = 0
+
     @IBOutlet var textField: UITextField!
 
-   
     @IBAction func readValue(_ sender: Any) {
-        let userValue: Int8 = Int8(textField.text!)! // validate how????
-        
-        if userValue > magicNumber{
-            toast(title: WRONG_TITLE, message: LESS_MESSAGE)
-        } else if userValue < magicNumber {
-            toast(title: WRONG_TITLE, message: BIGGER_MESSAGE)
-        } else {
-            toast(title: SUCCESS_TITLE, message: SUCCESS_MESSAGE + String(magicNumber))
-            magicNumber = generateRandomValue()
+        if validateInput(value: textField.text!) {
+            let userValue: Int = Int(textField.text!) ?? -1
+            if userValue == -1 {
+                toast(title: Constants.badRequestTitle, message: Constants.badRequestTitle)
+                return
+            }
+            if userValue > magicNumber {
+                toast(title: Constants.wrongTitle, message: Constants.lessMessage)
+            } else if userValue < magicNumber {
+                toast(title: Constants.wrongTitle, message: Constants.biggerMessage)
+            } else {
+                toast(title: Constants.successTitle, message: Constants.successMessage + String(magicNumber))
+                magicNumber = generateRandomValue()
+            }
+            textField.text = ""
+            return
         }
-        textField.text = ""
-}
-    
+        toast(title: Constants.badRequestTitle, message: Constants.incorrectInputMessage)
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.magicNumber = generateRandomValue()
     }
-    
+
     private func toast(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil) })
     }
-    
-    private func generateRandomValue()->Int8{
-        let tmp = Int8.random(in: 0..<100 )
+
+    private func generateRandomValue() -> Int {
+        let tmp = Int.random(in: 0..<100)
         return tmp
+    }
+
+    private func validateInput(value: String) -> Bool {
+        let trimmedString = value.trimmingCharacters(in: .whitespaces)
+        let validated = NSPredicate(format: "SELF MATCHES %@", Constants.validationRegex)
+        return validated.evaluate(with: trimmedString)
+
     }
 }
 
