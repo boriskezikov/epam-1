@@ -23,7 +23,8 @@ class ViewController: UIViewController {
 
    
     @IBAction func readValue(_ sender: Any) {
-        let userValue: Int64 = Int64(textField.text!)! //todo Validate input (remove strings)
+        let userValue: Int8 = Int8(textField.text!)! // validate how????
+        
         if userValue > magicNumber{
             showAlert(title: WRONG_TITLE, message: LESS_MESSAGE)
         } else if userValue < magicNumber {
