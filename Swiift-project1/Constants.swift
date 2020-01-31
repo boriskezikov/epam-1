@@ -8,13 +8,14 @@
 
 import Foundation
 
-enum Constants{
-    static let wrongTitle: String = "Wrong answer"
-    static let successTitle: String = "Success"
-    static let biggerMessage: String  = "Magic number is bigger"
-    static let lessMessage: String  = "Magic number is lower"
-    static let successMessage: String  = "Yes! You are right! This is: "
+struct Constants{
+    static let wrongTitle: String = "wronganswer"
+    static let successTitle: String = "success"
+    static let biggerMessage: String  = "numberbigger"
+    static let lessMessage: String  = "nubmerlower"
+    static let successMessage: String  = "rightanswer"
     static let validationRegex: String = "^[0-9]*$"
-    static let incorrectInputMessage: String = "Incorrect input. Try again!"
-    static let badRequestTitle: String = "Bad Request"
+    static let incorrectInputMessage: String = "incorrectinput"
+    static let badRequestTitle: String = "badrequest"
+    static let play:String = "play"
 }

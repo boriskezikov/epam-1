@@ -1,0 +1,17 @@
+/* 
+ Localizable.strings
+ Swiift-project1
+ 
+ Created by Kezikov Boris  on 31.01.2020.
+ Copyright © 2020 epam. All rights reserved.
+ */
+
+/* Class = "UIButton"; normalTitle = "Play"; ObjectID = "Fai-Mm-mlu"; */
+"wronganswer"= "Неверный ответ!";
+"success" = "Успех!";
+"numberbigger" = "Загаданное число больше введенного!";
+"nubmerlower"  = "Загаданное число меньше введенного!";
+"rightanswer"  = "Вы угадали! Число: ";
+"incorrectinput" = "Некорректный ввод. Попробуйте еще раз!";
+"badrequest"= "Ошибка!";
+"play"="Угадать";
