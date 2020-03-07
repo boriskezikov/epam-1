@@ -17,5 +17,9 @@ struct Constants{
     static let validationRegex: String = "^[0-9]*$"
     static let incorrectInputMessage: String = "incorrectinput"
     static let badRequestTitle: String = "badrequest"
-    static let play:String = "play"
+    static let play: String = "play"
+    static let tries: String = "tries"
+    static let gamesPlayed:String = "gamesPlayed"
+    static let welcomeMessage:String = "welcomeMessage"
+    static let welcomeTitle:String = "welcomeTitle"
 }

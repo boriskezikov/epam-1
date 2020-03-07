@@ -15,3 +15,7 @@
 "incorrectinput" = "Try again! ";
 "badrequest"= "Error!";
 "play"="Play";
+"tries" = "Total tries:";
+"gamesPlayed" = "Games Played";
+"welcomeMessage" = "Swipe right and enter game boarders!";
+"welcomeTitle" = "Welcome to the \"Guess my number game\"";
